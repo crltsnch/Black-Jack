@@ -29,23 +29,21 @@ for carta, valor in cartas.items():
     print("la carta {} vale {}".format(carta, valor))
 
 print("2\ Iteración ordenada sobre un diccionario")
-for carta in sorted(cartas.keys()):
+for carta in sorted(listacartas):
     print("la carta {} vale {}".format(carta, cartas[carta]))
 
-print("3\ Black Jack")
-lista_cartas = list(cartas)
 
 print("Ha seleccionado:", end=" ")
-carta = choice(listacartas)
-score = cartas[carta]
+carta1jugador = int(input(listacartas))
+puntuacion = cartas[carta]
 print(carta, end=" ")
-carta = choice(listacartas)
-score += cartas[carta]
+carta2jugador = int(input(listacartas))
+puntuacion += cartas[carta]
 print(carta, end=" ")
-print(" >>> su puntuación es de", score)
+print(" >>> su puntuación es de", puntuacion)
 
-main_banca = sample(lista_cartas, 2)
-score_banca = sum(cartas[carta] for carta in main_banca)
-print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0],
-                                                          main_banca[1],
-                                                          score_banca))
+cartabanca1 = sample(listacartas)
+puntuacionbanca = sum(cartas[carta] for carta in cartasbanca)
+print("La banca tiene: {} {}  >> su score es {}".format(cartasbanca[0],
+                                                          cartasbanca[1],
+                                                          puntuacionbanca))
