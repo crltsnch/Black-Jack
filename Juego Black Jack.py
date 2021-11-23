@@ -49,9 +49,17 @@ puntuacionbanca = listavalor[carta1banca]+ listavalor[carta2banca]
 print("La puntuacion total de la banca es: " + str(puntuacionbanca))
 
 def comparar():
-    if puntuacionbanca > mipuntuacion:
-        print("¡La banca ha ganado!")
-    elif puntuacionbanca < mipuntuacion:
+    if mipuntuacion < 21 and puntuacionbanca > mipuntuacion:
+        seguirjugando= input("¿Quieres coger otra carta? si o no: ")
+        print("seguirjugando")
+        if seguirjugando == "si" :
+            carta3jugador = int(input("Eliga una tercera carta de la lista de cartas: "))
+            nuevapuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador] + listavalor[carta3jugador]
+            print("Mi nueva puntuacion es de: " + str(nuevapuntuacion))
+        if seguirjugando == "no" :
+            print("¡La banca ha ganado!")
+
+    elif mipuntuacion == 21 and puntuacionbanca < mipuntuacion:
         print("¡He ganado!")
-    if puntuacionbanca == mipuntuacion:
+    if mipuntuacion == 21 and puntuacionbanca == mipuntuacion:
         print("¡Empate!")
