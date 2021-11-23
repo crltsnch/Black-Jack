@@ -48,6 +48,13 @@ print("Mi puntuacion total es: " + str(mipuntuacion))
 puntuacionbanca = listavalor[carta1banca]+ listavalor[carta2banca]
 print("La puntuacion total de la banca es: " + str(puntuacionbanca))
 
+if puntuacionbanca < 17:
+    carta3banca = random.randint(0, 12)
+    puntuacionbanca = puntuacionbanca + listavalor[carta3banca]
+    print("La banca coge otra carta")
+    print("La nueva puntuacion de la banca es: " + str(puntuacionbanca))
+
+
 def comparar():
     if mipuntuacion < 21 and puntuacionbanca > mipuntuacion:
         seguirjugando= input("¿Quieres coger otra carta? si o no: ")
