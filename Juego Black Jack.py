@@ -39,12 +39,14 @@ carta1jugador = int(input("Eliga una carta de la lista de cartas: "))
 print(listacartas[carta1jugador])
 carta2jugador = int(input("Elija otra carta de la lista de cartas: "))
 print(listacartas[carta2jugador])
-mipuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador]
 
-print( "Mis cartas son" + str(listacartas[carta1jugador])+" y " + str(listacartas[carta2jugador]) + "y" + "mi puntuacion es" + str(mipuntuacion))
+print( "La puntuacion de las cartas son respectivamente: " + str(listavalor[carta1jugador])+" y " + str(listavalor[carta2jugador]))
 
-carta1banca = random.randint(listacartas)
-carta2banca = random.randint(listacartas)
-cartasbanca = "carta1banca" + "carta2banca"
+mipuntuaciontotal = listavalor[carta1jugador] + listavalor[carta2jugador]
+print("Mi puntuacion total es" + str(mipuntuaciontotal))
+
+carta1banca = random.randint(0, 12)
+carta2banca = random.randint(0, 12)
+print("Las cartas que ha elegido la banca son: " + str(listacartas[carta1banca]) + str(listacartas[carta2banca]))
 puntuacionbanca = listavalor[carta1banca]+ listavalor[carta2banca]
-print("La banca tiene" + str(cartasbanca) + "y" + "su puntuacion es" + str(puntuacionbanca))
+print("La puntuacion total de la banca es " + str(listavalor[carta1banca]) + str(listavalor[carta2banca]))
