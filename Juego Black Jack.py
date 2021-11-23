@@ -31,12 +31,10 @@ print("2\ Iteración ordenada sobre un diccionario")
 for carta in sorted(listacartas):
     print("la carta {} vale {}".format(carta, cartas[carta]))
 
-carta1jugador = int(input("Eliga una carta de la lista de cartas: "))
-print(listacartas[carta1jugador])
-carta2jugador = int(input("Elija otra carta de la lista de cartas: "))
-print(listacartas[carta2jugador])
-
-print( "La puntuacion de las cartas son respectivamente: " + str(listavalor[carta1jugador])+" y " + str(listavalor[carta2jugador]))
+carta1jugador = random.randint(0, 12)
+carta2jugador = random.randint(0, 12)
+print("Las cartas que he elegido son: " + str(listacartas[carta1jugador]) + listacartas[carta2jugador])
+print( "Los valores de las cartas son respectivamente: " + str(listavalor[carta1jugador])+" y " + str(listavalor[carta2jugador]))
 
 carta1banca = random.randint(0, 12)
 carta2banca = random.randint(0, 12)
@@ -55,18 +53,17 @@ if puntuacionbanca < 17:
     print("La nueva puntuacion de la banca es: " + str(puntuacionbanca))
 
 
-def comparar():
-    if mipuntuacion < 21 and puntuacionbanca > mipuntuacion:
-        seguirjugando= input("¿Quieres coger otra carta? si o no: ")
-        print("seguirjugando")
-        if seguirjugando == "si" :
-            carta3jugador = int(input("Eliga una tercera carta de la lista de cartas: "))
-            nuevapuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador] + listavalor[carta3jugador]
-            print("Mi nueva puntuacion es de: " + str(nuevapuntuacion))
-        if seguirjugando == "no" :
-            print("¡La banca ha ganado!")
+    def comparar():
+        if mipuntuacion == 21 and puntuacionbanca < mipuntuacion:
+            print("¡He ganado!")
+        elif mipuntuacion == 21 and puntuacionbanca == mipuntuacion:
+            print("¡Empate!")
+        if mipuntuacion < 21:
+            seguirjugando = input("¿Quieres coger otra carta? si/no: ")
 
-    elif mipuntuacion == 21 and puntuacionbanca < mipuntuacion:
-        print("¡He ganado!")
-    if mipuntuacion == 21 and puntuacionbanca == mipuntuacion:
-        print("¡Empate!")
+            if seguirjugando == "si" :
+                carta3jugador = random.randint("Eliga una tercera carta de la lista de cartas: ")
+                nuevapuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador] + listavalor[carta3jugador]
+                print("Mi nueva puntuacion es de: " + str(nuevapuntuacion))
+            if seguirjugando == "no" :
+                print("¡La banca ha ganado!")
