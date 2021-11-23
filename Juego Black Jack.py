@@ -50,20 +50,28 @@ if puntuacionbanca < 17:
     carta3banca = random.randint(0, 12)
     puntuacionbanca = puntuacionbanca + listavalor[carta3banca]
     print("La banca coge otra carta")
-    print("La nueva puntuacion de la banca es: " + str(puntuacionbanca))
 
 
-    def comparar():
-        if mipuntuacion == 21 and puntuacionbanca < mipuntuacion:
-            print("¡He ganado!")
-        elif mipuntuacion == 21 and puntuacionbanca == mipuntuacion:
-            print("¡Empate!")
-        if mipuntuacion < 21:
-            seguirjugando = input("¿Quieres coger otra carta? si/no: ")
+def comparar():
+    if mipuntuacion == 21 and puntuacionbanca < mipuntuacion:
+        print("¡He ganado!")
+    elif mipuntuacion == 21 and puntuacionbanca == mipuntuacion:
+        print("¡Empate!")
+    if mipuntuacion != 21 and puntuacionbanca > mipuntuacion:
+        seguirjugando = input("¿Quieres coger otra carta? si/no: ")
 
-            if seguirjugando == "si" :
-                carta3jugador = random.randint("Eliga una tercera carta de la lista de cartas: ")
-                nuevapuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador] + listavalor[carta3jugador]
-                print("Mi nueva puntuacion es de: " + str(nuevapuntuacion))
-            if seguirjugando == "no" :
-                print("¡La banca ha ganado!")
+    if seguirjugando == "si" :
+        carta3jugador = random.randint("Eliga una tercera carta de la lista de cartas: ")
+        nuevapuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador] + listavalor[carta3jugador]
+        print("El jugador coge otra carta y su nueva puntuacion es de: " + str(nuevapuntuacion))
+
+        if nuevapuntuacion < puntuacionbanca or nuevapuntuacion > 21:
+            print("¡Has perdido!")
+        elif nuevapuntuacion == 21 and nuevapuntuacion > puntuacionbanca or nuevapuntuacion > puntuacionbanca:
+            print("¡Has ganado!")
+
+    if seguirjugando == "no" :
+        if puntuacionbanca > 22 or puntuacionbanca < mipuntuacion:
+            print("¡Has ganado!")
+        elif puntuacionbanca > mipuntuacion:
+            print("¡Has perdido!")
