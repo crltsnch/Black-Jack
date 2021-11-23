@@ -22,7 +22,6 @@ listacartas = list(carta)
 valor = cartas.values()
 listavalor = list(valor)
 print(listacartas)
-print(listavalor)
 
 print("1\ Iteración estándar sobre un diccionario")
 for carta, valor in cartas.items():
@@ -32,9 +31,6 @@ print("2\ Iteración ordenada sobre un diccionario")
 for carta in sorted(listacartas):
     print("la carta {} vale {}".format(carta, cartas[carta]))
 
-print("3\ Black Jack")
-listacartas = list(carta)
-
 carta1jugador = int(input("Eliga una carta de la lista de cartas: "))
 print(listacartas[carta1jugador])
 carta2jugador = int(input("Elija otra carta de la lista de cartas: "))
@@ -42,11 +38,12 @@ print(listacartas[carta2jugador])
 
 print( "La puntuacion de las cartas son respectivamente: " + str(listavalor[carta1jugador])+" y " + str(listavalor[carta2jugador]))
 
-mipuntuaciontotal = listavalor[carta1jugador] + listavalor[carta2jugador]
-print("Mi puntuacion total es" + str(mipuntuaciontotal))
-
 carta1banca = random.randint(0, 12)
 carta2banca = random.randint(0, 12)
 print("Las cartas que ha elegido la banca son: " + str(listacartas[carta1banca]) + str(listacartas[carta2banca]))
+print("Los valores de las cartas elegidas por la banca son respectivamente: " + str(listavalor[carta1banca]) + " y " + str(listavalor[carta2banca]))
+
+mipuntuaciontotal = listavalor[carta1jugador] + listavalor[carta2jugador]
+print("Mi puntuacion total es: " + str(mipuntuaciontotal))
 puntuacionbanca = listavalor[carta1banca]+ listavalor[carta2banca]
-print("La puntuacion total de la banca es " + str(listavalor[carta1banca]) + str(listavalor[carta2banca]))
+print("La puntuacion total de la banca es: " + str(puntuacionbanca))
