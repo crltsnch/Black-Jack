@@ -17,12 +17,12 @@ cartas = {
     chr(0x1f0ae): 10,
 }
 
-carta=cartas.keys
-listacartas=list(carta)
-valor=carta.values
-listapuntos=list(cartas.valores)
+carta = cartas.keys()
+listacartas = list(carta)
+valor = cartas.values()
+listavalor = list(valor)
 print(listacartas)
-print(listapuntos)
+print(listavalor)
 
 print("1\ Iteración estándar sobre un diccionario")
 for carta, valor in cartas.items():
@@ -30,22 +30,24 @@ for carta, valor in cartas.items():
 
 print("2\ Iteración ordenada sobre un diccionario")
 for carta in sorted(listacartas):
-    print("la carta {} vale {}".format(listacartas, listapuntos[listacartas]))
+    print("la carta {} vale {}".format(carta, cartas[carta]))
+
+print("3\ Black Jack")
+listacartas = list(carta)
+
+carta1jugador = int(input("Eliga una carta de la lista de cartas: "))
+puntuacion = listacartas[carta1jugador]
+print(listacartas[carta1jugador])
+carta2jugador = int(input("Elija otra carta de la lista de cartas: "))
+puntuacion = listacartas[carta2jugador]
+print(listacartas[carta2jugador])
+mipuntuacion=listavalor[carta1jugador]+listavalor[carta2jugador]
+
+print("La puntuacion de mis cartas son respectivamente: " + str(mipuntuacion))
 
 
-print("Ha seleccionado:", end=" ")
-carta1jugador = int(input(listacartas))
-puntuacion = listapuntos[carta1jugador]
-print(carta, end=" ")
-carta2jugador = int(input(listacartas))
-puntuacion += listapuntos(carta2jugador)
-print(carta, end=" ")
-print(" >>> su puntuación es de", puntuacion)
-
-cartabanca1 = random.randint(listacartas)
-cartabanca2= random.randint(listacartas)
-cartasbanca = str(cartabanca1) + str(cartabanca2)
-puntuacionbanca = sum(listapuntos[cartasbanca] for carta in cartasbanca)
-print("La banca tiene: {} {}  >> su puntuacion es {}".format(cartasbanca[1],
-                                                          cartasbanca[2],
-                                                          puntuacionbanca))
+carta1banca = random.randint(listacartas)
+carta2banca = random.randint(listacartas)
+cartasbanca = "carta1banca" + "carta2banca"
+puntuacionbanca = listavalor[carta1banca]+ listavalor[carta2banca]
+print("La banca tiene" + str(cartasbanca) + "y" + "su puntuacion es" + str(puntuacionbanca))
