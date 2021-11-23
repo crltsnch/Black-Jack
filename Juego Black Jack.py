@@ -36,15 +36,12 @@ print("3\ Black Jack")
 listacartas = list(carta)
 
 carta1jugador = int(input("Eliga una carta de la lista de cartas: "))
-puntuacion = listacartas[carta1jugador]
 print(listacartas[carta1jugador])
 carta2jugador = int(input("Elija otra carta de la lista de cartas: "))
-puntuacion = listacartas[carta2jugador]
 print(listacartas[carta2jugador])
-mipuntuacion=listavalor[carta1jugador]+listavalor[carta2jugador]
+mipuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador]
 
-print("La puntuacion de mis cartas son respectivamente: " + str(mipuntuacion))
-
+print( "Mis cartas son" + str(listacartas[carta1jugador])+" y " + str(listacartas[carta2jugador]) + "y" + "mi puntuacion es" + str(mipuntuacion))
 
 carta1banca = random.randint(listacartas)
 carta2banca = random.randint(listacartas)
