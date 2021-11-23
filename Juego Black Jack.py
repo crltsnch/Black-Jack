@@ -43,7 +43,15 @@ carta2banca = random.randint(0, 12)
 print("Las cartas que ha elegido la banca son: " + str(listacartas[carta1banca]) + str(listacartas[carta2banca]))
 print("Los valores de las cartas elegidas por la banca son respectivamente: " + str(listavalor[carta1banca]) + " y " + str(listavalor[carta2banca]))
 
-mipuntuaciontotal = listavalor[carta1jugador] + listavalor[carta2jugador]
-print("Mi puntuacion total es: " + str(mipuntuaciontotal))
+mipuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador]
+print("Mi puntuacion total es: " + str(mipuntuacion))
 puntuacionbanca = listavalor[carta1banca]+ listavalor[carta2banca]
 print("La puntuacion total de la banca es: " + str(puntuacionbanca))
+
+def comparar():
+    if puntuacionbanca > mipuntuacion:
+        print("¡La banca ha ganado!")
+    elif puntuacionbanca < mipuntuacion:
+        print("¡He ganado!")
+    if puntuacionbanca == mipuntuacion:
+        print("¡Empate!")
