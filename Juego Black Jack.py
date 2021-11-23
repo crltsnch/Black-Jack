@@ -47,31 +47,34 @@ puntuacionbanca = listavalor[carta1banca]+ listavalor[carta2banca]
 print("La puntuacion total de la banca es: " + str(puntuacionbanca))
 
 if puntuacionbanca < 17:
+    print("La banca coge otra carta")
     carta3banca = random.randint(0, 12)
     puntuacionbanca = puntuacionbanca + listavalor[carta3banca]
-    print("La banca coge otra carta")
+    print("La nueva puntuacion de la banca es: " + str(puntuacionbanca))
+    
 
-
-def comparar():
+def comparar() :
     if mipuntuacion == 21 and puntuacionbanca < mipuntuacion:
         print("¡He ganado!")
     elif mipuntuacion == 21 and puntuacionbanca == mipuntuacion:
         print("¡Empate!")
-    if mipuntuacion != 21 and puntuacionbanca > mipuntuacion:
+    elif mipuntuacion != 21:
         seguirjugando = input("¿Quieres coger otra carta? si/no: ")
+        
+        if seguirjugando == "si":
+            carta3jugador = random.randint(0, 12)
+            nuevapuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador] + listavalor[carta3jugador]
+            print("El jugador coge otra carta")
+            print("Su nueva puntuacion es de: " + str(nuevapuntuacion))
 
-    if seguirjugando == "si" :
-        carta3jugador = random.randint("Eliga una tercera carta de la lista de cartas: ")
-        nuevapuntuacion = listavalor[carta1jugador] + listavalor[carta2jugador] + listavalor[carta3jugador]
-        print("El jugador coge otra carta y su nueva puntuacion es de: " + str(nuevapuntuacion))
+            if nuevapuntuacion < puntuacionbanca or nuevapuntuacion > 21:
+                print("¡Has perdido!")
+            elif nuevapuntuacion == 21 and nuevapuntuacion > puntuacionbanca or nuevapuntuacion > puntuacionbanca:
+                print("¡Has ganado!")
 
-        if nuevapuntuacion < puntuacionbanca or nuevapuntuacion > 21:
-            print("¡Has perdido!")
-        elif nuevapuntuacion == 21 and nuevapuntuacion > puntuacionbanca or nuevapuntuacion > puntuacionbanca:
-            print("¡Has ganado!")
-
-    if seguirjugando == "no" :
-        if puntuacionbanca > 22 or puntuacionbanca < mipuntuacion:
-            print("¡Has ganado!")
-        elif puntuacionbanca > mipuntuacion:
-            print("¡Has perdido!")
+        elif seguirjugando == "no" :
+            if puntuacionbanca > 21 or puntuacionbanca < mipuntuacion:
+                print("¡Has ganado!")
+            elif puntuacionbanca > mipuntuacion:
+                print("¡Has perdido!")
+comparar()
