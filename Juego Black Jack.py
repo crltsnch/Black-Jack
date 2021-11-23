@@ -30,20 +30,22 @@ for carta, valor in cartas.items():
 
 print("2\ Iteración ordenada sobre un diccionario")
 for carta in sorted(listacartas):
-    print("la carta {} vale {}".format(carta, cartas[carta]))
+    print("la carta {} vale {}".format(listacartas, listapuntos[listacartas]))
 
 
 print("Ha seleccionado:", end=" ")
 carta1jugador = int(input(listacartas))
-puntuacion = cartas[carta]
+puntuacion = listapuntos[carta1jugador]
 print(carta, end=" ")
 carta2jugador = int(input(listacartas))
-puntuacion += cartas[carta]
+puntuacion += listapuntos(carta2jugador)
 print(carta, end=" ")
 print(" >>> su puntuación es de", puntuacion)
 
-cartabanca1 = sample(listacartas)
-puntuacionbanca = sum(cartas[carta] for carta in cartasbanca)
-print("La banca tiene: {} {}  >> su score es {}".format(cartasbanca[0],
-                                                          cartasbanca[1],
+cartabanca1 = random.randint(listacartas)
+cartabanca2= random.randint(listacartas)
+cartasbanca = str(cartabanca1) + str(cartabanca2)
+puntuacionbanca = sum(listapuntos[cartasbanca] for carta in cartasbanca)
+print("La banca tiene: {} {}  >> su puntuacion es {}".format(cartasbanca[1],
+                                                          cartasbanca[2],
                                                           puntuacionbanca))
