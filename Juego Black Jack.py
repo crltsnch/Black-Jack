@@ -1,4 +1,5 @@
-from random import choice, sample
+import random
+from random import randint
 
 cartas = {
     chr(0x1f0a1): 11,
@@ -16,8 +17,12 @@ cartas = {
     chr(0x1f0ae): 10,
 }
 
-print("Cartas: {}".format(" ".join(cartas.keys())))
-print("Puntos: {}".format(list(cartas.values())))
+carta=cartas.keys
+listacartas=list(carta)
+valor=carta.values
+listapuntos=list(cartas.valores)
+print(listacartas)
+print(listapuntos)
 
 print("1\ Iteración estándar sobre un diccionario")
 for carta, valor in cartas.items():
@@ -31,10 +36,10 @@ print("3\ Black Jack")
 lista_cartas = list(cartas)
 
 print("Ha seleccionado:", end=" ")
-carta = choice(lista_cartas)
+carta = choice(listacartas)
 score = cartas[carta]
 print(carta, end=" ")
-carta = choice(lista_cartas)
+carta = choice(listacartas)
 score += cartas[carta]
 print(carta, end=" ")
 print(" >>> su puntuación es de", score)
